@@ -434,20 +434,10 @@ img {
 
 }
 
-.clients-name:hover,
-.clients-name:focus {
-  border: 1px solid var(--color-font-hover);
-}
-
 .clients-slot:hover,
 .clients-slot:focus {
   border: 1px solid var(--color-font-hover);
 
-}
-
-.clients-name:hover .clients-item,
-.clients-name:focus .clients-item {
-  fill: var(--color-font-hover);
 }
 
 .clients-slot:hover .clients-item,
