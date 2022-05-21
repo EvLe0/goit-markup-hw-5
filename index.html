@@ -25,9 +25,9 @@
       <a class="logo" href="./index.html"> <span class="web">Web</span>Studio</a>
       <nav class="nav">
         <ul class="nav-list list">
-          <li class="nav-item"><a href="./index.html" class="link current">Студия</a></li>
-          <li class="nav-item"><a href="./portfolio.html" class="link">Портфолио</a></li>
-          <li class="nav-item"><a href="" class="link">Контакты</a></li>
+          <li class="nav-item"><a href="./index.html" class="nav-link current">Студия</a></li>
+          <li class="nav-item"><a href="./portfolio.html" class="nav-link">Портфолио</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Контакты</a></li>
         </ul>
       </nav>
 
@@ -59,7 +59,17 @@
           эффективные решения<br />
           для вашего бизнеса
         </h1>
-        <button class="hero-btn" type="button">Заказать услугу</button>
+        <button class="hero-btn" type="button" data-modal-open>Заказать услугу</button>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal-wrapper">
+            <button class="modal-btn" data-modal-close>
+              <svg width="18" height="18">
+                <use href="./images/sprite.svg#icon-close-black-18dp">
+                </use>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
     <!--Блок Преимуществ-->
@@ -120,13 +130,22 @@
         <h2 class="works-title">Чем мы занимаемся</h2>
         <ul class="works-list list">
           <li class="works-item">
-            <img width="370" height="294" src="./images/features/desktop.jpg" alt="Десктоп" />
+            <div class="works-label">
+              <img width="370" height="294" src="./images/features/desktop.jpg" alt="Десктоп" />
+              <p class="label">ДЕСКТОПНЫЕ ПРИЛОЖЕНИЯ</p>
+            </div>
           </li>
           <li class="works-item">
-            <img width="370" height="294" src="./images/features/smart.jpg" alt="Смартфон" />
+            <div class="works-label">
+              <img width="370" height="294" src="./images/features/smart.jpg" alt="Смартфон" />
+              <p class="label">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</p>
+            </div>
           </li>
           <li class="works-item">
-            <img width="370" height="294" src="./images/features/pad.jpg" alt="Планшет" />
+            <div class="works-label">
+              <img width="370" height="294" src="./images/features/pad.jpg" alt="Планшет" />
+              <p class="label">ДИЗАЙНЕРСКИЕ РЕШЕНИЯ</p>
+            </div>
           </li>
         </ul>
       </div>
@@ -416,6 +435,7 @@
       </div>
     </div>
   </footer>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>

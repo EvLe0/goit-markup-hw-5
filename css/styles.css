@@ -16,6 +16,8 @@ body {
   font-family: var(--main-font);
 }
 
+/*  Шапка  */
+
 .header {
   background: #ffffff;
   height: 80px;
@@ -23,11 +25,18 @@ body {
   border-bottom: 1px solid #ececec;
 }
 
+/* Стилизация логотипа */
 .web {
+  display: flex;
+  align-items: center;
+  height: 100%;
   color: var(--color-font-hover);
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
   color: var(--color-font-logo);
   font-family: var(--secondary-font);
   font-weight: 700;
@@ -37,33 +46,92 @@ body {
   letter-spacing: 0.03em;
 }
 
+/* =========================== */
+
+
+/* Сброс подчеркиваний в ссылках */
+
 .list {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
+/* ============================= */
+
+/* Меню сайта */
+
 .nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
   margin-left: 93px;
 }
 
 .nav-list {
   display: flex;
+  align-items: center;
+  height: 100%;
 }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Правое поле кроме последнего элемента */
 
 .nav .nav-item:not(:last-child) {
   margin-right: 50px;
 }
 
-.nav .link {
-  display: block;
+/* ================================= */
+
+.nav .nav-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .main-nav {
-  height: 80px;
+  height: 100%;
   display: flex;
   align-items: center;
 }
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: var(--color-font-hover);
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--color-font-main);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Нижняя плашка в меню */
+
+.nav-link.current::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-font-hover);
+  border-radius: 4px;
+}
+
+/* ======================== */
 
 .contacts {
   font-weight: 500;
@@ -78,21 +146,6 @@ body {
 
 .contacts-item:not(:last-child) {
   margin-right: 50px;
-}
-
-.link:hover,
-.link:focus,
-.link:active {
-  color: var(--color-font-hover);
-}
-
-.link {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  color: var(--color-font-main);
 }
 
 .link-addr:hover,
@@ -128,6 +181,7 @@ body {
 }
 
 .hero {
+  position: relative;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -170,12 +224,63 @@ body {
   margin-top: 30px;
   width: 200px;
   height: 50px;
+  border-radius: 4px;
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: var(--color-btn-hover);
 }
+
+/* Модальное окно */
+
+.backdrop {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 1600px;
+  height: 1024px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+}
+
+.modal-wrapper {
+  position: absolute;
+  top: 221px;
+  left: 536px;
+  width: 528px;
+  height: 581px;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+}
+
+.modal-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  cursor: pointer;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= */
 
 .section {
   padding-top: 94px;
@@ -283,6 +388,37 @@ img {
 .works-list .works-item:not(:last-child) {
   margin-right: 30px;
 }
+
+/* Плашки для "Чем мы занимаемся" */
+
+.works-label {
+  width: 100%;
+  position: relative;
+
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #FFFFFF
+}
+
+/* ===================================== */
 
 .team {
   background: var(--color-background-accent);
@@ -549,6 +685,50 @@ img {
     0px 4px 4px rgba(0, 0, 0, 0.06);
 
 }
+
+/* Плашки для портфолио */
+
+.portfolio-label {
+  width: 370px;
+  height: 294px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.portfolio-text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0;
+
+  color: #FFFFFF;
+
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translatey(100%);
+}
+
+.thumb:hover .portfolio-text {
+  transform: translateY(0);
+  transition: transform 250ms ease;
+}
+
+
+/* ============================== */
 
 /* Footer */
 
